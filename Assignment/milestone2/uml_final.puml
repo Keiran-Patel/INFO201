@@ -1,0 +1,86 @@
+@startuml
+actor :User: as User
+actor :Staff: as Staff
+
+
+usecase (Authenticated\nCustomer) as RegisteredUser
+usecase (Authenticated\nStaff) as RegisteredStaff
+usecase (Account\nRegistration) as UserRegistration
+usecase (Agree with Terms and\n Conditions) as Terms
+usecase (Input Account Details) as Password
+usecase (Customer Login) as Loginc
+usecase (Staff Login) as Logins
+usecase (Update\nAccount Details) as Update
+usecase (View Account\nDetails) as Check
+usecase (Search for Music) as Search
+usecase (Search by Artist) as Artist
+usecase (Search by Title) as Title
+usecase (Search by Genre) as Genre
+usecase (Search by Year) as Year
+usecase (Browse via Related Items) as Relatedb
+usecase (Browse via Artist) as Artistb
+usecase (Browse via Title) as Titleb
+usecase (Browse via Genre) as Genreb
+usecase (Browse via Year) as Yearb
+usecase (Browse Music) as Browseb
+
+usecase (Update weekly staff picks) as Updates
+usecase (Update via Artist) as Artists
+usecase (Update via Title) as Titles
+usecase (Update via Genre) as Genres
+usecase (Update via Year) as Years
+
+usecase (Add item to cart) as Add
+usecase (View Cart) as View
+usecase (Remove Item) as Remove
+usecase (Update Quantity) as Quantity
+usecase (Check Out Cart) as Out
+
+
+usecase (Select Gift-Wrap Option) as Extra
+usecase (Select Shipping Method) as Express
+usecase (Select Payment Method) as Purchased
+
+
+User --> UserRegistration
+UserRegistration ..> Loginc:<<required>>
+UserRegistration ..> Terms:<<include>>
+UserRegistration ..>Password:<<include>>
+Staff --> Logins
+RegisteredUser ..> Update:<<required>>
+RegisteredUser ..> Check:<<required>>
+Loginc ..> RegisteredUser:<<required>>
+RegisteredUser ..> Search:<<extend>>
+RegisteredUser ..> Artist:<<extend>>
+RegisteredUser ..> Title:<<extend>>
+RegisteredUser ..> Genre:<<extend>>
+RegisteredUser ..> Year:<<extend>>
+
+RegisteredUser ..> Relatedb:<<extend>>
+RegisteredUser ..> Artistb:<<extend>>
+RegisteredUser ..> Titleb:<<extend>>
+RegisteredUser ..> Genreb:<<extend>>
+RegisteredUser ..> Yearb:<<extend>>
+RegisteredUser ..> Browseb:<<extend>>
+RegisteredStaff ..> Update:<<extend>>
+RegisteredStaff ..> Check:<<extend>>
+
+Logins ..> RegisteredStaff:<<required>>
+Logins ..> Updates:<<extend>>
+Logins ..> Artists:<<extend>>
+Logins ..> Titles:<<extend>>
+Logins ..> Genres:<<extend>>
+Logins ..> Years:<<extend>>
+RegisteredStaff ..>Updates:<<extend>>
+
+RegisteredUser ..>Add:<<extend>>
+RegisteredUser ..>View:<<extend>>
+View ..> Remove:<<extend>>
+View ..> Quantity:<<extend>>
+View ..> Out:<<extend>>
+
+ Out ..>Express:<<include>>
+ Out ..> Extra:<<include>>
+ Out ..> Purchased:<<include>>
+
+@enduml

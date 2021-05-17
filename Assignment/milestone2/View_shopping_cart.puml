@@ -1,0 +1,35 @@
+@startsalt
+{
+{*  Records | Accessories | Shopping Cart |  Checkout }
+  {+
+  
+    <b>Shopping Cart:
+    .
+    
+    
+..
+Item(s): Def Zeppelin Record  ($60.00) 
+--
+Quantity:
+^1^ 
+[Remove]
+--
+Gift-Wrapping and Custom Message:
+(X) No
+()  Yes |
+Message: "_______________________________________" 
+--
+Unit price:  ($60.00)
+--
+Name:   | "Bob"
+Postal Address: | "182 forth Street, Dunedin"
+--
+Type of Shipping:
+^Express Shipping ($30.00)^
+--
+<b>Subtotal: ($90.00)
+--
+  [ Continue Shopping ] | [   Checkout Securely   ] | 
+}}
+@endsalt
+

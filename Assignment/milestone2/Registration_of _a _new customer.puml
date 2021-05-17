@@ -1,0 +1,43 @@
+@startsalt
+{
+    {*  Records | Accessories | Shopping Cart |  Checkout }
+  {+
+  
+Registration:    
+    
+    .
+..
+<b>Personal Details:
+..
+
+E-mail Address:|"Bob@gmail.com"
+Password:| "BobsPassword"
+Name:   | "Bob"
+Surname: | "Smith"
+Postal Address: | "182 forth Street, Dunedin"
+Date of Birth: 
+<b>Date | <b>Month  | <b>Year 
+ ^17^ | ^July^ | ^2000^ 
+-- 
+<b>Musical Preferences:
+
+[]  Pop | []  2010s
+[X] Rock | []  2000s
+[X]  Hip-Hop | [X]  1990s
+[]  Jazz | [X]  1980s
+[X]  Adult Contemporary | [X]  1970s
+[]  Classical | []  1960s
+[X]  Alternative | []  1950s
+[]  Metal | []  1940s and earlier
+[]  Dark Electro-Grindcore 
+--
+<b>Favourite Artist:
+Artists: (Click for More Options)
+
+^Def Zeppelin^
+
+--
+  [ Cancel ] | [   Register   ] | 
+}}
+@endsalt
+

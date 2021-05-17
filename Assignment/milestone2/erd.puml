@@ -1,0 +1,98 @@
+@startuml
+
+skinparam Style StrictUML
+skinparam LineType ortho
+skinparam monochrome true
+
+class Customer {
+    * customer_ID
+    --
+    * ShippingAddress
+    * music Preference
+    * Favourite artist
+    * order history 
+    
+}
+
+class Order_Header {
+    * OrderID
+--
+    * OrderDate
+    * Status
+    * Comments
+}
+
+class Person {
+    * PersonID
+--
+    * FirstName
+    * Surname 
+    * MobileNumber
+}
+class Payment{
+    * Payment_ID
+--
+    * Date: Date 
+    * Amount
+}
+
+class Payment_type{
+    * Payment_type_ID
+--
+    * payment_Option
+}
+
+class Staff{
+    * Staff_ID
+--
+    * Favourite_Record
+    * ShippingAddress
+    * music Preference
+    * Favourite artist
+    * order history 
+    }
+
+class Account{
+    * AccountID
+--
+    * Username 
+    * Password
+}
+
+class Order_Line{
+    --
+    * Quantity 
+    * price paid
+    * Gift_Wrap
+    
+}
+class Product{
+* Product_ID
+--
+*Description
+*Unit cost
+*quanitity on hand
+*Date purchased 
+*Supplier
+
+}
+class Product_Catagory{
+* Productcatagory_ID
+--
+*Description
+}
+
+Order_Header ||..|{ Order_Line 
+Order_Line }o..||  Product
+Product }|..|| Product_Catagory
+Staff --|> Person
+Customer--|>Person 
+Account||..|| Staff
+Account||..|| Customer
+Order_Header }o..|| Customer 
+Payment||..o{Payment_type
+Account||..o{ Payment
+
+
+
+@enduml
